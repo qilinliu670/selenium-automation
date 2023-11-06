@@ -17,6 +17,8 @@ public class App
     {
     	WebDriverManager.chromedriver().setup();
     	ChromeOptions chromeOptions = new ChromeOptions();
+    	chromeOptions.addArguments("--no-sandbox");
+    	chromeOptions.addArguments("--disable-dev-shm-usage");
     	chromeOptions.addArguments("--headless");
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("http://54.177.205.97:8082/contact.html");
