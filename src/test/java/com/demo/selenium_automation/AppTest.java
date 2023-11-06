@@ -28,7 +28,9 @@ public class AppTest
     public void insureMeTest() throws InterruptedException {
     	WebDriverManager.chromedriver().setup();
     	ChromeOptions chromeOptions = new ChromeOptions();
+    	chromeOptions.addArguments("--disable-dev-shm-usage");
     	chromeOptions.addArguments("--headless");
+    	chromeOptions.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("http://54.177.205.97:8082/contact.html");
         driver.findElement(By.id("inputName")).sendKeys("Qilin Liu");
