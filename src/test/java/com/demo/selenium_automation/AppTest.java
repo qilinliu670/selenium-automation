@@ -2,8 +2,6 @@ package com.demo.selenium_automation;
 
 import static org.junit.Assert.assertTrue;
 
-import java.time.Duration;
-
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,7 +32,6 @@ public class AppTest
         driver.findElement(By.id("inputMail")).sendKeys("qilin.liu@tcs.com");
         driver.findElement(By.id("inputMessage")).sendKeys("message");
         driver.findElement(By.id("my-button")).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         assertTrue(driver.findElement(By.id("response")).getText().equals("Message Sent"));
         driver.close();
     }
