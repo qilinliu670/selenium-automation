@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 /**
  * Unit test for simple App.
  */
@@ -24,6 +26,7 @@ public class AppTest
     
     @Test
     public void insureMeTest() throws InterruptedException {
+    	WebDriverManager.chromedriver().setup();
     	ChromeOptions chromeOptions = new ChromeOptions();
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("http://54.177.205.97:8082/contact.html");
